@@ -358,22 +358,37 @@ document.getElementById('modalReserveBtn')?.addEventListener('click', () => {
 
 /* ────────── WHATSAPP ────────── */
 function whatsapp(p, size, color) {
+
+  const customerCode = prompt("اكتب الكود ");
+
+  if (!customerCode || customerCode.trim() === "") {
+    alert("لازم تكتبي كود المنتج الأول.");
+    return;
+  }
+
   const msg = encodeURIComponent(
-`أهلاً RIVA Store 👋
+`السلام عليكم 🌸
 
-عايزة أحجز المنتج ده:
+عايزة أحجز سكراب من RIVA Store
 
-المنتج: ${p.name}
-الماركة: ${p.brand}
-اللون: ${color}
-المقاس: ${size}
-السعر: ${p.price.toLocaleString('ar-EG')} جنيه
+🆔 كود المنتج: ${customerCode}
 
-اسمي: [اسمك هنا]`
+👕 المنتج: ${p.name}
+🏷️ الماركة: ${p.brand}
+🎨 اللون: ${color}
+📏 المقاس: ${size}
+💰 السعر: ${p.price.toLocaleString("ar-EG")} جنيه
+
+الاسم:
+رقم الهاتف:
+العنوان:`
   );
-  window.open(`https://wa.me/201234567890?text=${msg}`, '_blank');
-}
 
+  window.open(
+    `https://wa.me/201507480809?text=${msg}`,
+    "_blank"
+  );
+}
 /* ────────── FAVORITES ────────── */
 function toggleFav(id) {
   const i = favs.indexOf(id);
