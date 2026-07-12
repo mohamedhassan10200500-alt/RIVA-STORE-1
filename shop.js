@@ -367,7 +367,7 @@ function whatsapp(p, size, color) {
   }
 
   // قيمة الخصم الثابتة لكل الأكواد
-  const discount = 100;
+  const discount = 300;
 
   const finalPrice = Math.max(0, p.price - discount);
 
